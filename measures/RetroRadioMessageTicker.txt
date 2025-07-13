@@ -1,0 +1,45 @@
+RetroRadioMessageTicker = 
+/*  
+  This measure creates a scrolling retro-style radio ticker message in Power BI.  
+  It uses HTML + CSS inside one string.  
+  The HTML Viewer visual renders the moving text like an old-school radio or sports broadcast.
+*/
+
+/*  
+  This variable checks your SpeedControl slicer.  
+  If the user picks a speed, we use it — otherwise, it defaults to 25 seconds.
+*/
+VAR SelectedSpeed = SELECTEDVALUE(SpeedControl[SpeedSeconds], 25)
+
+RETURN
+"
+<div style='
+  display: flex;
+  align-items: center;
+  background: #000;
+  color: #39FF14;
+  font-family: monospace;
+  font-size: 1.2em;
+  height: 80px;
+  overflow: hidden;
+  border: 4px double #39FF14;
+  padding-left: 20px;
+  padding-right: 20px;
+'>
+  <style>
+    .ticker-text {
+      white-space: nowrap;
+      display: inline-block;
+      animation: scrollText " & SelectedSpeed & "s linear infinite;
+    }
+    @keyframes scrollText {
+      0%   { transform: translateX(100%); }
+      100% { transform: translateX(-100%); }
+    }
+  </style>
+
+  <div class='ticker-text'>
+    ⚽ LIVE: Messi & Mbappé lead PSG | United sign Bellingham | Retro Sports 88FM 📻 Stay tuned...
+  </div>
+</div>
+"
