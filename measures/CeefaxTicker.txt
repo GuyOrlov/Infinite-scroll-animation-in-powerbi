@@ -1,0 +1,46 @@
+CeefaxTicker = 
+/*  
+  This measure creates a scrolling Ceefax-style ticker tape in Power BI.  
+  It uses HTML + CSS inside one string.  
+  The HTML Viewer visual displays the retro BBC Ceefax look with blocky mono text.
+*/
+
+/*  
+  This variable checks your SpeedControl slicer.  
+  If the user picks a speed, we use it — otherwise, it defaults to 30 seconds.
+*/
+VAR SelectedSpeed = SELECTEDVALUE(SpeedControl[SpeedSeconds], 30)
+
+RETURN
+"
+<div style='
+  display: flex;
+  align-items: center;
+  background: #0000FF; /* Ceefax blue */
+  color: #FFFF00;      /* Ceefax yellow text */
+  font-family: monospace;
+  font-size: 1em;
+  height: 60px;
+  overflow: hidden;
+  padding: 0 20px;
+  border-top: 4px solid #00FF00; /* Retro neon green border */
+  border-bottom: 4px solid #00FF00;
+  letter-spacing: 1px;
+'>
+  <style>
+    .ceefax-ticker-text {
+      white-space: nowrap;
+      display: inline-block;
+      animation: scrollCeefax " & SelectedSpeed & "s linear infinite;
+    }
+    @keyframes scrollCeefax {
+      0%   { transform: translateX(100%); }
+      100% { transform: translateX(-100%); }
+    }
+  </style>
+
+  <div class='ceefax-ticker-text'>
+    ⚡ CEEFAX 302: TRANSFER RUMOURS LIVE | 📰 MESSI SIGNS NEW DEAL | ⚽ GOALS TODAY: HAALAND (32') MBAPPÉ (54') | ALL THE SCORES AT A GLANCE
+  </div>
+</div>
+"
