@@ -1,0 +1,22 @@
+SpeedControl = 
+/*  
+  This table defines your SpeedControl options for carousels and tickers.  
+  It lets the user choose how fast the scrolling should be.
+*/
+
+/*  
+  Each row has:
+  - A SpeedLabel (like Fast, Medium, Slow)
+  - A SpeedSeconds number (which is used by the VAR in your measures)
+*/
+DATATABLE(
+  "SpeedLabel", STRING,
+  "SpeedSeconds", INTEGER,
+  {
+    {"Fast", 15},
+    {"Medium", 25},
+    {"Medium-Slow", 30},
+    {"Slow", 35},
+    {"Very Slow", 40}
+  }
+)
