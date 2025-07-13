@@ -6,15 +6,60 @@ Welcome to my **Power BI Infinite Scroll & Ticker Pack** — a creative way to b
 
 ## ✅ **What’s inside**
 
+<p align='center'>
+  <img src="img/ScrollingTeamCard.png" alt="Scrolling Team Card" style="max-width: 100%;">
+</p>
 - 👥 **Team Cards** — Meet your team with the `ScrollingTeamCard`.
-- ⚽ **Football Stats** — Loop through player profiles with goals, assists, and more.
-- 💼 **Sales Team Carousel** — Show top performers and their sales.
-- 🌍 **Inflation Carousel** — Compare countries visually.
-- 🛍️ **Product Carousel** — Highlight products and growth.
-- 📈 **KPI Highlight Carousel** — Big key stats on loop.
-- 📻 **Retro Radio Message Ticker** — 1980s broadcast style.
-- 📺 **Ceefax Ticker** — BBC Ceefax blocky style.
-- ⏱️ **SpeedControl Table** — Lets users pick scroll speed in a slicer.
+
+<p align='center'>
+  <img src="img/FootballProfileStatsCarousel.png" alt="Football Profile Stats Carousel" style="max-width: 100%;">
+</p>
+- ⚽ **Football Stats** — Loop through player profiles with the `FootballProfileStatsCarousel`.
+
+<p align='center'>
+  <img src="img/SalesTeamCarousel.png" alt="Sales Team Carousel" style="max-width: 100%;">
+</p>
+- 💼 **Sales Team Carousel** — Show top performers with the `SalesTeamCarousel`.
+
+<p align='center'>
+  <img src="img/MakeupCountryInflationCard.png" alt="Makeup Country Inflation Card" style="max-width: 100%;">
+</p>
+- 🌍 **Inflation Carousel** — Compare countries visually with the `MakeupCountryInflationCard`.
+
+<p align='center'>
+  <img src="img/ProductCarousel.png" alt="Product Carousel" style="max-width: 100%;">
+</p>
+- 🛍️ **Product Carousel** — Highlight products with the `ProductCarousel`.
+
+<p align='center'>
+  <img src="img/CustomerTestimonialCarousel.png" alt="Customer Testimonial Carousel" style="max-width: 100%;">
+</p>
+- ⭐ **Customer Testimonial Carousel** — Show customer reviews with the `CustomerTestimonialCarousel`.
+
+<p align='center'>
+  <img src="img/KPIHighlightCarousel.png" alt="KPI Highlight Carousel" style="max-width: 100%;">
+</p>
+- 📈 **KPI Highlight Carousel** — Big KPIs on loop with the `KPIHighlightCarousel`.
+
+<p align='center'>
+  <img src="img/CompanyTimelineCarousel.png" alt="Company Timeline Carousel" style="max-width: 100%;">
+</p>
+- 🏢 **Company Timeline Carousel** — Your company’s story with the `CompanyTimelineCarousel`.
+
+<p align='center'>
+  <img src="img/RetroRadioMessageTicker.png" alt="Retro Radio Message Ticker" style="max-width: 100%;">
+</p>
+- 📻 **Retro Radio Message Ticker** — 1980s broadcast style with the `RetroRadioMessageTicker`.
+
+<p align='center'>
+  <img src="img/CeefaxTicker.png" alt="Ceefax Ticker" style="max-width: 100%;">
+</p>
+- 📺 **Ceefax Ticker** — BBC Ceefax blocky style with the `CeefaxTicker`.
+
+<p align='center'>
+  <img src="img/SpeedControlTable.png" alt="Speed Control Table" style="max-width: 100%;">
+</p>
+- ⏱️ **SpeedControl Table** — Pick your scroll speed using the `SpeedControl`.
 
 ---
 
@@ -26,45 +71,52 @@ Welcome to my **Power BI Infinite Scroll & Ticker Pack** — a creative way to b
 - **Fully dynamic**, no JavaScript needed.
 
 ---
-<p align='center'>
-<p dir="auto"><a target="_blank" rel="noopener noreferrer" href="Scrolling Team Cards HTML.png"><img src="img/scrolling-team-cards-html.png" style="max-width: 100%;"></a></p>
-</p>
 
 ## ✨ **Original Inspiration**
 
-These infinite scrolling ideas were inspired by [Temani Afif’s Infinite Scroll Animation](https://codepen.io/t_afif/pen/jOXRGGx) — I tidied the original idea and turned it into reusable DAX blocks and standalone HTML files.  
-💡 *Thank you Temani for the brilliant base concept!*
+These infinite scrolling ideas were inspired by [Temani Afif’s Infinite Scroll Animation](https://codepen.io/t_afif/pen/jOXRGGx).  
+I adapted it into reusable DAX measures and a standalone HTML file — with clear inline comments for learning.
 
 ---
 
 ## 🗂️ **Included Files**
 
-✅ **`/html/scrolling-team-cards.html`** — A standalone version of the infinite scroll, fully commented, great for learning or tweaking.
+✅ `/html/ScrollingTeamCard.html` — Self-contained HTML version for quick testing.
 
-✅ **`/measures/`** — Each DAX measure with clear `/* */` comments so you know how it works.
+✅ `/measures/` — Each DAX measure saved by name:
+- `ScrollingTeamCard.txt`
+- `FootballProfileStatsCarousel.txt`
+- `SalesTeamCarousel.txt`
+- `MakeupCountryInflationCard.txt`
+- `ProductCarousel.txt`
+- `CustomerTestimonialCarousel.txt`
+- `KPIHighlightCarousel.txt`
+- `CompanyTimelineCarousel.txt`
+- `RetroRadioMessageTicker.txt`
+- `CeefaxTicker.txt`
+- `SpeedControlTable.txt`
 
-✅ **`SpeedControlTable.txt`** — A `DATATABLE` you can paste into Power BI to power the speed slicer.
+✅ **SpeedControl Table** — A simple `DATATABLE` that powers the scroll speed slicer.
 
 ---
 
 ## 💡 **How to use it**
 
-1. Import the `SpeedControl` table into your model.
-2. Paste the DAX measure into Power BI.
-3. Use an **HTML Content Viewer** visual to render the HTML.
-4. Add a slicer for scroll speed.
-5. Enjoy your infinite loop on office screens, dashboards, or even waiting rooms!
+1. Import the `SpeedControl` table.
+2. Add your chosen measure to an **HTML Content Viewer** visual.
+3. Connect the speed slicer.
+4. Watch your infinite scrolling visuals come to life!
 
 ---
 
 ## 🎉 **Credits**
 
-- Infinite scroll animation: [Temani Afif](https://codepen.io/t_afif/pen/jOXRGGx)
-- Power BI version: *[Your Name]*
+- Infinite scroll animation: [Temani Afif on CodePen](https://codepen.io/t_afif/pen/jOXRGGx)
+- Tidy Power BI version: *[Your Name]*
 
 ---
 
 ## 🚀 **Clone, learn, tweak!**
 
-If you find this useful, feel free to ⭐ star the repo, leave feedback, or make it your own!
+If you find this useful, ⭐ star the repo, clone, tweak, and share it!
 
