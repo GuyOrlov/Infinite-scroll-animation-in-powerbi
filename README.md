@@ -7,12 +7,12 @@ Welcome to my **Power BI Infinite Scroll & Ticker Pack** — a creative way to b
 ## ✅ **What’s inside**
 
 <p align='center'>
-  <img src="img/ScrollingTeamCard.png" alt="Scrolling Team Card" style="max-width: 100%;">
+  <img src="img/SalesTeamCarousel.png" alt="Scrolling Team Card" style="max-width: 100%;">
 </p>
 - 👥 **Team Cards** — Meet your team with the `ScrollingTeamCard`.
 
 <p align='center'>
-  <img src="img/FootballProfileStatsCarousel.png" alt="Football Profile Stats Carousel" style="max-width: 100%;">
+  <img src="img/FootballProfileStatsCarousel .png" alt="Football Profile Stats Carousel" style="max-width: 100%;">
 </p>
 - ⚽ **Football Stats** — Loop through player profiles with the `FootballProfileStatsCarousel`.
 
