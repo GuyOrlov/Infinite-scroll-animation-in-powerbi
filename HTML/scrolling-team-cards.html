@@ -1,0 +1,125 @@
+
+<!-- 
+  Scrolling Team Cards HTML File
+  This is a tidy, self-contained version inspired by 
+  Temani Afif’s Infinite Scroll Animation: https://codepen.io/t_afif/pen/jOXRGGx
+
+  Adapted & organised by [Your Name] for use in Power BI or as a standalone webpage.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Scrolling Team Cards</title>
+
+  <style>
+    /* Base body styling for centre display */
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: grid;
+      place-content: center;
+      font-family: system-ui;
+      background: #E08E79; /* Nice warm background */
+    }
+
+    /* The container holds all scrolling items */
+    .container {
+      --d: 15s; /* Duration for the scroll animation */
+      display: grid;
+      grid-template-columns: repeat(3, 300px); /* Number of visible cards */
+      overflow: hidden; /* Hide overflow to create a clean scroll loop */
+      -webkit-mask: linear-gradient(90deg, #0000, #000 5% 95%, #0000); /* Fade edges */
+    }
+
+    /* Each card item */
+    .container > div {
+      grid-area: 1/1; /* Stack items on top of each other */
+      display: grid;
+      grid-template-columns: 120px 1fr; /* Picture & text side by side */
+      align-content: center;
+      gap: 10px;
+      background: #fff padding-box; /* White background for cards */
+      border-inline: 10px solid transparent; /* Invisible space buffer */
+      animation: r var(--d) linear infinite; /* Infinite scroll loop */
+    }
+
+    /* Avatar image style */
+    .container > div img {
+      width: 100%;
+      grid-row: span 2; /* Make image span rows for balance */
+    }
+
+    /* Remove default margin for all elements inside cards */
+    .container > div * {
+      margin: 0;
+    }
+
+    /* Name heading at the bottom of the text column */
+    .container > div h3 {
+      margin-top: auto;
+    }
+
+    /* Manually set animation delays for smooth continuous flow */
+    .container > div:nth-child(2) {
+      animation-delay: calc((1 - 2)/6 * var(--d));
+    }
+    .container > div:nth-child(3) {
+      animation-delay: calc((1 - 3)/6 * var(--d));
+    }
+    .container > div:nth-child(4) {
+      animation-delay: calc((1 - 4)/6 * var(--d));
+    }
+    .container > div:nth-child(5) {
+      animation-delay: calc((1 - 5)/6 * var(--d));
+    }
+    .container > div:nth-child(6) {
+      animation-delay: calc((1 - 6)/6 * var(--d));
+    }
+
+    /* Keyframes for scroll animation: slide left then jump back to right */
+    @keyframes r {
+      16.6667% { transform: translate(-100%); }
+      16.6767% { transform: translate(500%); }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Container holds all team cards -->
+  <div class="container">
+    <div>
+      <img src="https://i.pravatar.cc/150?img=1" alt="Jane Doe" />
+      <h3>Jane Doe</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    </div>
+    <div>
+      <img src="https://i.pravatar.cc/150?img=2" alt="John Doe" />
+      <h3>John Doe</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    </div>
+    <div>
+      <img src="https://i.pravatar.cc/150?img=3" alt="John Doe" />
+      <h3>John Doe</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    </div>
+    <div>
+      <img src="https://i.pravatar.cc/150?img=4" alt="John Doe" />
+      <h3>John Doe</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    </div>
+    <div>
+      <img src="https://i.pravatar.cc/150?img=5" alt="Jane Doe" />
+      <h3>Jane Doe</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    </div>
+    <div>
+      <img src="https://i.pravatar.cc/150?img=6" alt="John Doe" />
+      <h3>John Doe</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    </div>
+  </div>
+</body>
+</html>
