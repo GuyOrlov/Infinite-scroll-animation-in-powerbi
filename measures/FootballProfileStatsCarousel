@@ -1,0 +1,118 @@
+FootballProfileStatsCarousel = 
+/*  
+  This measure creates a scrolling Football Player Profile Carousel in Power BI.  
+  It uses HTML + CSS inside one string.  
+  The HTML Viewer visual shows each player’s stats and photo in a smooth scroll.
+*/
+
+/*  
+  This variable checks your SpeedControl slicer.  
+  If the user picks a speed, we use it — otherwise, it defaults to 25 seconds.
+*/
+VAR SelectedSpeed = SELECTEDVALUE(SpeedControl[SpeedSeconds], 25)
+
+RETURN
+"
+<div style='
+  display: grid;
+  grid-template-columns: repeat(3, 300px);
+  overflow: hidden;
+  -webkit-mask: linear-gradient(90deg,#0000,#000 5% 95%,#0000);
+  background: linear-gradient(135deg, #00416A, #E4E5E6);
+  place-content: center;
+  min-height: 100vh;
+  font-family: system-ui;
+  color: #000;
+'>
+  <style>
+    .scroll-item {
+      grid-area: 1/1;
+      display: grid;
+      grid-template-columns: 100px 1fr;
+      align-content: center;
+      gap: 10px;
+      background: rgba(255,255,255,0.9) padding-box;
+      border-inline: 10px solid transparent;
+      animation: scrollAnim " & SelectedSpeed & "s linear infinite;
+      border-radius: 8px;
+      padding: 10px;
+      backdrop-filter: blur(2px);
+    }
+    .scroll-item img {
+      width: 100%;
+      border-radius: 50%;
+      grid-row: span 2;
+    }
+    .scroll-item * { margin: 0; }
+    .scroll-item h3 {
+      font-size: 1.1em;
+      margin-bottom: 4px;
+    }
+    .scroll-item .stats {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      font-size: 0.85em;
+    }
+    .scroll-item:nth-child(2) { animation-delay: calc((1 - 2)/5 * " & SelectedSpeed & "s); }
+    .scroll-item:nth-child(3) { animation-delay: calc((1 - 3)/5 * " & SelectedSpeed & "s); }
+    .scroll-item:nth-child(4) { animation-delay: calc((1 - 4)/5 * " & SelectedSpeed & "s); }
+    .scroll-item:nth-child(5) { animation-delay: calc((1 - 5)/5 * " & SelectedSpeed & "s); }
+
+    @keyframes scrollAnim {
+      20% { transform: translate(-100%); }
+      20.01% { transform: translate(400%); }
+    }
+  </style>
+
+  <div class='scroll-item'>
+    <img src='https://i.pravatar.cc/100?img=31' alt='Player'>
+    <h3>Lionel Messi</h3>
+    <div class='stats'>
+      <span>Position: Forward</span>
+      <span>Goals: 30</span>
+      <span>Assists: 12</span>
+      <span>Appearances: 28</span>
+    </div>
+  </div>
+  <div class='scroll-item'>
+    <img src='https://i.pravatar.cc/100?img=32' alt='Player'>
+    <h3>Kylian Mbappé</h3>
+    <div class='stats'>
+      <span>Position: Forward</span>
+      <span>Goals: 27</span>
+      <span>Assists: 10</span>
+      <span>Appearances: 25</span>
+    </div>
+  </div>
+  <div class='scroll-item'>
+    <img src='https://i.pravatar.cc/100?img=33' alt='Player'>
+    <h3>Kevin De Bruyne</h3>
+    <div class='stats'>
+      <span>Position: Midfielder</span>
+      <span>Goals: 8</span>
+      <span>Assists: 18</span>
+      <span>Appearances: 26</span>
+    </div>
+  </div>
+  <div class='scroll-item'>
+    <img src='https://i.pravatar.cc/100?img=34' alt='Player'>
+    <h3>Virgil van Dijk</h3>
+    <div class='stats'>
+      <span>Position: Defender</span>
+      <span>Goals: 2</span>
+      <span>Assists: 1</span>
+      <span>Appearances: 30</span>
+    </div>
+  </div>
+  <div class='scroll-item'>
+    <img src='https://i.pravatar.cc/100?img=35' alt='Player'>
+    <h3>Alisson Becker</h3>
+    <div class='stats'>
+      <span>Position: Goalkeeper</span>
+      <span>Clean Sheets: 15</span>
+      <span>Appearances: 32</span>
+    </div>
+  </div>
+</div>
+"
