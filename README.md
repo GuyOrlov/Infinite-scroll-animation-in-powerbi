@@ -73,7 +73,9 @@ Welcome to my **Power BI Infinite Scroll & Ticker Pack** — a creative way to b
 ---
 
 ## ✨ **Original Inspiration**
-
+<p align='center'>
+  <img src="img/scrolling-team-cards-html.png" alt="Speed Control Table" style="max-width: 100%;">
+</p>
 These infinite scrolling ideas were inspired by [Temani Afif’s Infinite Scroll Animation](https://codepen.io/t_afif/pen/jOXRGGx).  
 I adapted it into reusable DAX measures and a standalone HTML file — with clear inline comments for learning.
 
