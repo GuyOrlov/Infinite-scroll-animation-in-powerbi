@@ -1,62 +1,67 @@
-# 📊 Power BI Infinite Scroll Carousels & Tickers
+# 📊 Power BI Infinite Scroll Carousels & Retro Tickers
 
-This repo contains a set of **Power BI measures** that create beautiful, animated infinite scroll carousels and ticker tapes — fully built with **HTML + CSS** inside Power BI DAX measures.
-
----
-
-## ✅ **What’s included**
-
-- ⚽ **FootballProfileStatsCarousel** — Football player stats in a slick, auto-scrolling format.
-- 👥 **ScrollingTeamCard** — Show your team members on a loop, great for office screens.
-- 💼 **SalesTeamCarousel** — Highlight top performers with role and sales info.
-- 🌍 **MakeupCountryInflationCard** — Compare country inflation rates visually.
-- 🛍️ **ProductCarousel** — Show product sales and growth.
-- 📈 **KPIHighlightCarousel** — Loop your key metrics in a modern panel.
-- 📰 **RetroRadioMessageTicker** — Old-school 1980s radio-style scrolling tape.
-- 📺 **CeefaxTicker** — BBC Ceefax–style retro news ticker.
-- ⏱️ **SpeedControl** table — Lets users pick the scroll speed via slicer.
+Welcome to my **Power BI Infinite Scroll & Ticker Pack** — a creative way to bring **dynamic scrolling content** into your reports using pure HTML + CSS **inside DAX measures**.
 
 ---
 
-## 🏗️ **How this works**
+## ✅ **What’s inside**
 
-- Each measure is **pure DAX** with HTML & CSS inside.
-- You use the [HTML Content Viewer](https://docs.powerbi.tips/product/html-content) visual or similar.
-- The `SpeedControl` table is a simple `DATATABLE` that lets users pick speeds like `Fast`, `Medium`, `Slow` — this feeds each measure’s `VAR SelectedSpeed`.
-
----
-
-## 🔗 **Inspiration**
-
-These infinite scroll layouts were inspired by [Temani Afif’s “Infinite Scroll Animation” CodePen](https://codepen.io/t_afif/pen/jOXRGGx).  
-I adapted the original concept into **standalone HTML blocks** that work nicely in Power BI as dynamic visuals.
-
-I tidied up the CodePen idea and merged everything into reusable HTML snippets that you can paste into a single DAX measure — **no JavaScript needed**, just HTML and CSS.
+- 👥 **Team Cards** — Meet your team with the `ScrollingTeamCard`.
+- ⚽ **Football Stats** — Loop through player profiles with goals, assists, and more.
+- 💼 **Sales Team Carousel** — Show top performers and their sales.
+- 🌍 **Inflation Carousel** — Compare countries visually.
+- 🛍️ **Product Carousel** — Highlight products and growth.
+- 📈 **KPI Highlight Carousel** — Big key stats on loop.
+- 📻 **Retro Radio Message Ticker** — 1980s broadcast style.
+- 📺 **Ceefax Ticker** — BBC Ceefax blocky style.
+- ⏱️ **SpeedControl Table** — Lets users pick scroll speed in a slicer.
 
 ---
 
-## 💡 **Usage idea**
+## 🧩 **How it works**
 
-- Show these carousels on a big screen in your office or reception area.
-- Run a BBC Ceefax–style ticker for fun in a meeting.
-- Use the `SpeedControl` slicer to let your audience pick their scroll speed.
-- Even works on waiting room screens — imagine it looping for customers!
-
----
-
-## ⚡ **Credits**
-
-- Original infinite scroll animation by [Temani Afif](https://codepen.io/t_afif)
-- Power BI measure version, edits, and README by *[Your Name]*
+- Each carousel or ticker is built with **HTML + CSS** wrapped inside a **DAX measure**.
+- The `SpeedControl` table makes the speed dynamic.
+- Use the **HTML Content Viewer** visual in Power BI to render the HTML.
+- **Fully dynamic**, no JavaScript needed.
 
 ---
 
-## 🚀 **Try it!**
+## ✨ **Original Inspiration**
 
-1. Import the `SpeedControl` table.
-2. Add your chosen measure to a **HTML Content Viewer** visual.
-3. Add your slicer for speed.
-4. Sit back and enjoy your **smooth, infinite scrolling content**!
+These infinite scrolling ideas were inspired by [Temani Afif’s Infinite Scroll Animation](https://codepen.io/t_afif/pen/jOXRGGx) — I tidied the original idea and turned it into reusable DAX blocks and standalone HTML files.  
+💡 *Thank you Temani for the brilliant base concept!*
 
 ---
+
+## 🗂️ **Included Files**
+
+✅ **`/html/scrolling-team-cards.html`** — A standalone version of the infinite scroll, fully commented, great for learning or tweaking.
+
+✅ **`/measures/`** — Each DAX measure with clear `/* */` comments so you know how it works.
+
+✅ **`SpeedControlTable.txt`** — A `DATATABLE` you can paste into Power BI to power the speed slicer.
+
+---
+
+## 💡 **How to use it**
+
+1. Import the `SpeedControl` table into your model.
+2. Paste the DAX measure into Power BI.
+3. Use an **HTML Content Viewer** visual to render the HTML.
+4. Add a slicer for scroll speed.
+5. Enjoy your infinite loop on office screens, dashboards, or even waiting rooms!
+
+---
+
+## 🎉 **Credits**
+
+- Infinite scroll animation: [Temani Afif](https://codepen.io/t_afif/pen/jOXRGGx)
+- Power BI version: *[Your Name]*
+
+---
+
+## 🚀 **Clone, learn, tweak!**
+
+If you find this useful, feel free to ⭐ star the repo, leave feedback, or make it your own!
 
