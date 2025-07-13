@@ -26,6 +26,9 @@ Welcome to my **Power BI Infinite Scroll & Ticker Pack** — a creative way to b
 - **Fully dynamic**, no JavaScript needed.
 
 ---
+<p align='center'>
+<p dir="auto"><a target="_blank" rel="noopener noreferrer" href="Scrolling Team Cards HTML.png"><img src="img/scrolling-team-cards-html.png" style="max-width: 100%;"></a></p>
+</p>
 
 ## ✨ **Original Inspiration**
 
