@@ -56,9 +56,6 @@ Welcome to my **Power BI Infinite Scroll & Ticker Pack** — a creative way to b
 </p>
 - 📺 **Ceefax Ticker** — BBC Ceefax blocky style with the `CeefaxTicker`.
 
-<p align='center'>
-  <img src="img/SpeedControlTable.png" alt="Speed Control Table" style="max-width: 100%;">
-</p>
 - ⏱️ **SpeedControl Table** — Pick your scroll speed using the `SpeedControl`.
 
 ---
