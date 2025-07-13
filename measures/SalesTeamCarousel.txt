@@ -1,0 +1,120 @@
+SalesTeamCarousel = 
+/*  
+  This measure creates a scrolling Sales Team Carousel in Power BI.  
+  It uses HTML + CSS inside one string.  
+  The HTML Viewer visual renders this nicely.
+*/
+
+/*  
+  This variable checks your SpeedControl slicer.  
+  If the user picks a speed, we use it — otherwise, it defaults to 25 seconds.
+*/
+VAR SelectedSpeed = SELECTEDVALUE(SpeedControl[SpeedSeconds], 25)
+
+RETURN
+"
+<div style='
+  display: grid;
+  grid-template-columns: repeat(3, 300px);
+  overflow: hidden;
+  -webkit-mask: linear-gradient(90deg,#0000,#000 5% 95%,#0000);
+  background: linear-gradient(135deg, #0F2027, #203A43, #2C5364);
+  place-content: center;
+  min-height: 100vh;
+  font-family: system-ui;
+  color: #fff;
+'>
+  <style>
+    .scroll-item {
+      grid-area: 1/1;
+      display: grid;
+      grid-template-columns: 120px 1fr;
+      align-content: center;
+      gap: 10px;
+      background: rgba(255, 255, 255, 0.1) padding-box;
+      border-inline: 10px solid transparent;
+      animation: scrollAnim " & SelectedSpeed & "s linear infinite;
+      border-radius: 8px;
+      padding: 10px;
+      backdrop-filter: blur(4px);
+    }
+    .scroll-item img {
+      width: 100%;
+      border-radius: 50%;
+      grid-row: span 2;
+    }
+    .scroll-item * {
+      margin: 0;
+    }
+    .scroll-item h3 {
+      margin-top: auto;
+      font-size: 1.1em;
+    }
+    .scroll-item .role-sales {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+      font-size: 0.85em;
+    }
+    .scroll-item:nth-child(2) { animation-delay: calc((1 - 2)/6 * " & SelectedSpeed & "s); }
+    .scroll-item:nth-child(3) { animation-delay: calc((1 - 3)/6 * " & SelectedSpeed & "s); }
+    .scroll-item:nth-child(4) { animation-delay: calc((1 - 4)/6 * " & SelectedSpeed & "s); }
+    .scroll-item:nth-child(5) { animation-delay: calc((1 - 5)/6 * " & SelectedSpeed & "s); }
+    .scroll-item:nth-child(6) { animation-delay: calc((1 - 6)/6 * " & SelectedSpeed & "s); }
+
+    @keyframes scrollAnim {
+      16.6667% { transform: translate(-100%); }
+      16.6767% { transform: translate(500%); }
+    }
+  </style>
+
+  <div class='scroll-item'>
+    <img src='https://i.pravatar.cc/150?img=7' alt='Emily Smith'>
+    <h3>Emily Smith</h3>
+    <div class='role-sales'>
+      <span>Sales Manager</span>
+      <span>Q2 Sales: $120k</span>
+    </div>
+  </div>
+  <div class='scroll-item'>
+    <img src='https://i.pravatar.cc/150?img=8' alt='Michael Brown'>
+    <h3>Michael Brown</h3>
+    <div class='role-sales'>
+      <span>Account Executive</span>
+      <span>Q2 Sales: $95k</span>
+    </div>
+  </div>
+  <div class='scroll-item'>
+    <img src='https://i.pravatar.cc/150?img=9' alt='Sarah Johnson'>
+    <h3>Sarah Johnson</h3>
+    <div class='role-sales'>
+      <span>Senior Rep</span>
+      <span>Q2 Sales: $110k</span>
+    </div>
+  </div>
+  <div class='scroll-item'>
+    <img src='https://i.pravatar.cc/150?img=10' alt='David Lee'>
+    <h3>David Lee</h3>
+    <div class='role-sales'>
+      <span>Regional Lead</span>
+      <span>Q2 Sales: $135k</span>
+    </div>
+  </div>
+  <div class='scroll-item'>
+    <img src='https://i.pravatar.cc/150?img=11' alt='Ashley Green'>
+    <h3>Ashley Green</h3>
+    <div class='role-sales'>
+      <span>Business Dev</span>
+      <span>Q2 Sales: $88k</span>
+    </div>
+  </div>
+  <div class='scroll-item'>
+    <img src='https://i.pravatar.cc/150?img=12' alt='Daniel White'>
+    <h3>Daniel White</h3>
+    <div class='role-sales'>
+      <span>Inside Sales</span>
+      <span>Q2 Sales: $92k</span>
+    </div>
+  </div>
+</div>
+"
