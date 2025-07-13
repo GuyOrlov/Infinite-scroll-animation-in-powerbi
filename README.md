@@ -107,7 +107,6 @@ I adapted it into reusable DAX measures and a standalone HTML file — with clea
 ## 🎉 **Credits**
 
 - Infinite scroll animation: [Temani Afif on CodePen](https://codepen.io/t_afif/pen/jOXRGGx)
-- Tidy Power BI version: *[Your Name]*
 
 ---
 
