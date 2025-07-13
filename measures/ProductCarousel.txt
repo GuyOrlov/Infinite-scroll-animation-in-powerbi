@@ -1,0 +1,106 @@
+ProductCarousel = 
+/*  
+  This measure creates a scrolling Product Carousel in Power BI.  
+  It uses HTML + CSS inside one string.  
+  The HTML Viewer visual renders the scrolling effect nicely.
+*/
+
+/*  
+  This variable checks your SpeedControl slicer.  
+  If the user picks a speed, we use it — otherwise, it defaults to 25 seconds.
+*/
+VAR SelectedSpeed = SELECTEDVALUE(SpeedControl[SpeedSeconds], 25)
+
+RETURN
+"
+<div style='
+  display: grid;
+  grid-template-columns: repeat(3, 300px);
+  overflow: hidden;
+  -webkit-mask: linear-gradient(90deg,#0000,#000 5% 95%,#0000);
+  background: linear-gradient(135deg, #FDEB71, #F8D800);
+  place-content: center;
+  min-height: 100vh;
+  font-family: system-ui;
+  color: #000;
+'>
+  <style>
+    .scroll-item {
+      grid-area: 1/1;
+      display: grid;
+      grid-template-columns: 100px 1fr;
+      align-content: center;
+      gap: 10px;
+      background: rgba(255,255,255,0.8) padding-box;
+      border-inline: 10px solid transparent;
+      animation: scrollAnim " & SelectedSpeed & "s linear infinite;
+      border-radius: 8px;
+      padding: 10px;
+      backdrop-filter: blur(2px);
+    }
+    .scroll-item img {
+      width: 100%;
+      border-radius: 8px;
+      grid-row: span 2;
+    }
+    .scroll-item * { margin: 0; }
+    .scroll-item h3 { font-size: 1em; }
+    .scroll-item .sales {
+      font-size: 0.85em;
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+    .scroll-item:nth-child(2) { animation-delay: calc((1 - 2)/5 * " & SelectedSpeed & "s); }
+    .scroll-item:nth-child(3) { animation-delay: calc((1 - 3)/5 * " & SelectedSpeed & "s); }
+    .scroll-item:nth-child(4) { animation-delay: calc((1 - 4)/5 * " & SelectedSpeed & "s); }
+    .scroll-item:nth-child(5) { animation-delay: calc((1 - 5)/5 * " & SelectedSpeed & "s); }
+
+    @keyframes scrollAnim {
+      20% { transform: translate(-100%); }
+      20.01% { transform: translate(400%); }
+    }
+  </style>
+
+  <div class='scroll-item'>
+    <img src='https://i.pravatar.cc/100?img=21' alt='Product'>
+    <h3>Red Velvet Lipstick</h3>
+    <div class='sales'>
+      <span>Units Sold: 1,200</span>
+      <span>Growth: +8%</span>
+    </div>
+  </div>
+  <div class='scroll-item'>
+    <img src='https://i.pravatar.cc/100?img=22' alt='Product'>
+    <h3>Matte Foundation</h3>
+    <div class='sales'>
+      <span>Units Sold: 950</span>
+      <span>Growth: +5%</span>
+    </div>
+  </div>
+  <div class='scroll-item'>
+    <img src='https://i.pravatar.cc/100?img=23' alt='Product'>
+    <h3>Volume Mascara</h3>
+    <div class='sales'>
+      <span>Units Sold: 1,050</span>
+      <span>Growth: +12%</span>
+    </div>
+  </div>
+  <div class='scroll-item'>
+    <img src='https://i.pravatar.cc/100?img=24' alt='Product'>
+    <h3>Peach Blush</h3>
+    <div class='sales'>
+      <span>Units Sold: 800</span>
+      <span>Growth: +7%</span>
+    </div>
+  </div>
+  <div class='scroll-item'>
+    <img src='https://i.pravatar.cc/100?img=25' alt='Product'>
+    <h3>Glow Primer</h3>
+    <div class='sales'>
+      <span>Units Sold: 500</span>
+      <span>Growth: +15%</span>
+    </div>
+  </div>
+</div>
+"
